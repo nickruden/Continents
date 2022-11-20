@@ -3,7 +3,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/test')
 
 var Continent = mongoose.model('Continent', { name: String })
 
-var conti = new Continent({ name: 'Африка' })
+var conti = new Continent({ name: 'Евразия' })
 conti.save(function (err) {
     if (err) {
         console.log(err)
