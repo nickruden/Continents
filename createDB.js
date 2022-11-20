@@ -12,7 +12,7 @@ async function run() {
     const allcontinents = database.collection("continents");
     const result = await allcontinents.insertMany(data);
     console.log(`${result} documents were inserted`);
-  } 
+  }
   finally {
     await client.close();
   }

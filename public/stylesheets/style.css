@@ -11,30 +11,42 @@ body {
 }
 
 /* web-page  */
-.page_imgs {
-  height: 450px;
-}
-.page_imgs:hover {
-  height: 500px;
-  transition: height 1s;
-}
-.pages {
+.pages{
+  margin-top: 40px;
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
   justify-content: space-around;
-  align-self: center;
 }
-h1{
-  text-align: right;
-  margin-right: 300px;
-}
-h4{
+
+.pages_text{
   flex-direction: column;
   align-self: center;
-  width: 600px;
+  margin-top: 60px;
+  width: 50%;
+  text-align: center;
+  word-spacing: 3px;
+  font-size: 1.4em;
+  font-weight: 600;
 }
-p{
- font-size: 14px;
+.pages_text>h1{
+  margin-bottom: 40px;
+  font-size: 3em;
+}
+
+.pages_img{
+  height: 500px;
+  align-self: center;
+  margin-right: 20px;
+}
+.pages_img>img {
+  height: 500px;
+  margin-top: 20px;
+  transition: all 1s;
+  transform: rotate(-5deg);
+}
+.pages_img>img:hover {
+  margin-top: 40px;
+  transform: scale(1.1) rotate(10deg);
 }
 a {
   color: #00B7FF;
