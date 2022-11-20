@@ -1,16 +1,14 @@
 var mongoose = require('mongoose')
-mongoose.connect('mongodb://127.0.0.1:27017/test')
+mongoose.connect('mongodb://127.0.0.1:27017/test1')
 
-var schema = mongoose.Schema({ name: String })
+var Continent = require("./models/continent.js").Continent
 
-schema.methods.boom = function(){
-    console.log(this.get("name") + " проплыло над землёй")
-}
-
-var Continent = mongoose.model('Continent', schema)
-
-var conti = new Continent({ name: 'Облачко' })
-conti.save(function (err) {
-    conti.boom()
+var continent = new Continent({
+    title: "Евразия",
+    nick: "eurasia"
 })
 
+console.log(continent)
+continent.save(function(err, continent, affected){
+    console.log(continent.title)
+})
