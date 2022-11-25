@@ -9,9 +9,9 @@ async function run() {
     var database = client.db("allcontinents");
     database.dropDatabase()
     database = client.db("allcontinents");
-    const allcontinents = database.collection("continents");
-    const result = await allcontinents.insertMany(data);
-    console.log(`${result} documents were inserted`);
+    const continents = database.collection("continents");
+    const result = await continents.insertMany(data);
+    console.log(`${result.insertedCount} documents were inserted`);
   } 
   finally {
     await client.close();
