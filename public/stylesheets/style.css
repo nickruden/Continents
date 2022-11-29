@@ -58,14 +58,12 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 .error_img{
   height: 300px;
   width: 600px;
-  align-self: center;
 }
 .error_page>h1{
   color: #088ec4;
-  align-self: center;
-  margin-left: 290px;
 }

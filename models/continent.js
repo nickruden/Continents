@@ -17,4 +17,4 @@ var continentSchema = new Schema({
   }
 })
 
-module.exports.Continent = mongoose.model("Continent", continentSchema)
+module.exports.Continent = mongoose.model("continent", continentSchema)
