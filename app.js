@@ -40,7 +40,7 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error', {
     title: 'Упс... Что-то пошло не так :(',
-    picture: './images/error.png'
+    picture: '/images/error.png'
   });
 });
 
