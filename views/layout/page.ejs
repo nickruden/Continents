@@ -16,29 +16,15 @@
             <li class="nav-item">
               <a class="nav-link" href="/">Главная</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/continent/eurasia">Евразия</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/continent/africa">Африка</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/continent/north_america">Сев. Америка</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/continent/south_america">Юж. Америка</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/continent/australia">Австралия</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/continent/antarctica">Антарктида</a>
-            </li>
-          </ul>
+            <% menu.forEach(function(continent){ %>
+              <li class="nav-item">
+                <a class="nav-link" href="/continent/<%= continent.nick %>"><%= continent.title %></a>
+              </li>
+            <% }) %>
 
           <ul class="navbar-nav navbar-right">
             <li>
-              <a class="nav-link" href="/logreg">Войти</a>
+              <a class="nav-link" href="">Войти</a>
             </li>
           </ul>
         </div>
