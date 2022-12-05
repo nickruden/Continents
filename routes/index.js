@@ -9,7 +9,8 @@ router.get('/', function(req, res, next) {
     res.cookie('gretting', 'Hi!!!').render('index', { 
       title: 'Express',
       text: 'Проект "Континенты"',
-      menu: menu
+      menu: menu,
+      counter: req.session.counter
     })
   });
 });

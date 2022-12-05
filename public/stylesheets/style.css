@@ -67,3 +67,7 @@ a {
 .error_page>h1{
   color: #088ec4;
 }
+.error_page>h2{
+  align-self:center;
+  color: #088ec4;
+}
