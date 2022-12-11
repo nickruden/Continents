@@ -16,15 +16,15 @@
             <li class="nav-item">
               <a class="nav-link" href="/">Главная</a>
             </li>
-            <% menu.forEach(function(continent){ %>
-              <li class="nav-item">
-                <a class="nav-link" href="/continent/<%= continent.nick %>"><%= continent.title %></a>
-              </li>
-            <% }) %>
+              <% if(typeof nav == 'object' && nav){ nav.forEach(function(continent){ %>
+                <li class="nav-item">
+                  <a class="nav-link" href="/continent/<%= continent.nick %>"><%= continent.title %></a>
+                </li>
+              <% })} %>
 
           <ul class="navbar-nav navbar-right">
             <li>
-              <a class="nav-link" href="">Войти</a>
+              <a class="nav-link" href="/">Войти</a>
             </li>
           </ul>
         </div>
