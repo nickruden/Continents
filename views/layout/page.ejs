@@ -13,17 +13,19 @@
       <nav class="navbar navbar-expand-sm bg-light navbar-light">
         <div class="container-fluid">
           <ul class="navbar-nav">
-            <li class="nav-item">
+            <li class="navbar-nav navbar-left"> 
               <a class="nav-link" href="/">Главная</a>
             </li>
+          </ul>
+          <ul class="navbar-nav">
               <% if(typeof nav == 'object' && nav){ nav.forEach(function(continent){ %>
                 <li class="nav-item">
                   <a class="nav-link" href="/continent/<%= continent.nick %>"><%= continent.title %></a>
                 </li>
               <% })} %>
-
+          </ul>
           <ul class="navbar-nav navbar-right">
-            <li>
+            <li class="log">
               <a class="nav-link" href="/">Войти</a>
             </li>
           </ul>
@@ -34,9 +36,6 @@
     <main>
       <%- body %>
     </main>
-
-    <footer>
     
-    </footer>
   </body>
 </html>
