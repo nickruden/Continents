@@ -1,8 +1,8 @@
-*{
+/* *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
+} */
 
 
 body{
@@ -79,4 +79,18 @@ a {
 .error_page>h2{
   align-self:center;
   color: #088ec4;
+} 
+
+
+/* log/reg page */
+.conteiner {
+	margin: 20px 0 0 20px;
+  font-size: 1em;
+}
+
+.form-horizontal>* {
+	margin-bottom: 20px;
+}
+.form-group>label{
+  margin: 0 0 4px 7px;
 }
