@@ -133,23 +133,31 @@ footer>div{
 
 /* log/reg page */
 .conteiner {
-  font-size: 1em;
+  font-size: 2.2vh;
   height: 90.8vh;
   background-color: rgba(136, 255, 107, 0.144);
 }
 .conteiner>div>*{
-  margin-left: 20px;
+  margin-left: 2.7vh;
   font-weight: 600;
 }
+.conteiner>div>h1{
+  font-size: 4.3vh;
+}
 .conteiner>div>p{
-  font-size: 20px;
+  font-size: 2.7vh;
 }
 .form-horizontal{
-  margin: 20px 0 0 20px;
+  margin: 20px 0 0 2.7vh;
 }
 .form-horizontal>* {
-	margin-bottom: 20px;
+	margin-bottom: 2.7vh;
 }
 .form-group>label{
   margin: 0 0 4px 7px;
+}
+.form-group>div>input{
+  height: 5vh;
+  width: 50vw;
+  font-size: 2vh;
 }
