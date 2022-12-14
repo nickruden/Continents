@@ -20,7 +20,7 @@ header{
 
 /* web-pages */
 .pages{
-  height: 642px;
+  height: 954px;
   padding-top: 40px;
   display: flex;
   flex-direction: row-reverse;
@@ -74,7 +74,7 @@ footer>div{
   align-items: center;
   justify-content: space-between;
   background-color: rgba(136, 255, 107, 0.144);
-  height: 642px;
+  height: 954px;
   padding-top: 20px;
 }
 .log{
@@ -127,7 +127,7 @@ footer>div{
 /* log/reg page */
 .conteiner {
   font-size: 1em;
-  height: 642px;
+  height: 954px;
   background-color: rgba(136, 255, 107, 0.144);
 }
 .conteiner>div>*{
