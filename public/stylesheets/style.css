@@ -28,8 +28,6 @@ header{
 
 .pages_text{
   flex-direction: column;
-  align-self: center;
-  margin-top: 60px;
   width: 50%;
   text-align: center;
   word-spacing: 3px;
@@ -44,12 +42,10 @@ header{
 
 .pages_img{
   height: 500px;
-  align-self: center;
   margin-right: 20px;
 }
 .pages_img>img {
   height: 500px;
-  margin-top: 20px;
   transition: all 1s;
   transform: rotate(-5deg);
 }
