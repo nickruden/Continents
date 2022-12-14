@@ -20,7 +20,7 @@ header{
 
 /* web-pages */
 .pages{
-  height: 954px;
+  height: 90.8vh;
   padding-top: 40px;
   display: flex;
   flex-direction: row-reverse;
@@ -29,30 +29,35 @@ header{
 }
 
 .pages_text{
+  align-self: center;
   flex-direction: column;
+  margin-top: -100px;
   width: 50%;
   text-align: center;
   word-spacing: 3px;
-  font-size: 1.4em;
+  font-size: 3.36vh;
   font-weight: 600;
   font-family: Arial, Helvetica, sans-serif;
 }
 .pages_text>h1{
   margin-bottom: 40px;
-  font-size: 3em;
+  font-size: 6.46vh;
 }
 
 .pages_img{
-  height: 500px;
+  align-self: center;
+  height: 70vh;
   margin-right: 20px;
+  margin-bottom: 100px;
 }
 .pages_img>img {
-  height: 500px;
+  height: 70vh;
   transition: all 1s;
   transform: rotate(-5deg);
 }
 .pages_img>img:hover {
-  margin-top: 40px;
+  margin-top: 3vh;
+  margin-left: 2vh;
   transform: scale(1.1) rotate(10deg);
 }
 
@@ -74,7 +79,7 @@ footer>div{
   align-items: center;
   justify-content: space-between;
   background-color: rgba(136, 255, 107, 0.144);
-  height: 954px;
+  height: 90.8vh;
   padding-top: 20px;
 }
 .log{
@@ -105,11 +110,13 @@ footer>div{
 
 /* error  */
 .error_page{
-  margin-top: 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 90.8vh;
+  margin-top: 50px;
+  background-color: rgba(136, 255, 107, 0.144);
 }
 .error_img{
   height: 300px;
@@ -127,7 +134,7 @@ footer>div{
 /* log/reg page */
 .conteiner {
   font-size: 1em;
-  height: 954px;
+  height: 90.8vh;
   background-color: rgba(136, 255, 107, 0.144);
 }
 .conteiner>div>*{
