@@ -26,7 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 var MongoStore = require('connect-mongo'); (session);
 app.use(session({
   secret: "Continents",
-  cookie: {maxAge:60*1000},
+  cookie: {maxAge:60*10000},
   resave: true,
   saveUninitialized: true,
   store: MongoStore.create({mongoUrl: 'mongodb://127.0.0.1:27017/allcontinents'})
