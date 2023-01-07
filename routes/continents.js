@@ -17,7 +17,7 @@ router.get('/:nick' ,function(req, res, next) {
       console.log(err);
       if(err) return next(err)
     } else {
-      if(continents.length == 0) return next(new Error("Нет такого котенка в мультике"))
+      if(continents.length == 0) return next(new Error("Нет такого континента на земеле"))
       var continent = continents[0];
       res.render('continent', {
         title: continent.title,
