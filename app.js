@@ -3,8 +3,10 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var mongoose = require('mongoose');
+// var mongoose = require('mongoose');
+var mysql2 = require('mysql2/promise');
 var session = require('express-session');
+var MySQLStore = require('express-mysql-session'); (session);
 
 
 var indexRouter = require('./routes/index');
@@ -13,6 +15,16 @@ var continents = require('./routes/continents');
 
 var app = express();
 
+var options = {
+  host : 'localhost',
+  port: '3306',
+  user : 'root',
+  password : 'root',
+  database: 'mydb'
+};
+  var connection = mysql2.createPool(options)
+  var sessionStore = new MySQLStore(options, connection);
+  
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -22,15 +34,29 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+// app.use(express.static(path.join(__dirname, 'bower_components')));
 
-var MongoStore = require('connect-mongo'); (session);
 app.use(session({
-  secret: "Continents",
-  cookie: {maxAge:60*10000},
+  secret: 'Continents',
+  key: 'sid',
+  store: sessionStore,
   resave: true,
   saveUninitialized: true,
-  store: MongoStore.create({mongoUrl: 'mongodb://127.0.0.1:27017/allcontinents'})
-}))
+  cookie: { path: '/',
+    httpOnly: true,
+    maxAge: 60*10000
+  }
+  }));
+  
+
+// var MongoStore = require('connect-mongo'); (session);
+// app.use(session({
+//   secret: "Continents",
+//   cookie: {maxAge:60*10000},
+//   resave: true,
+//   saveUninitialized: true,
+//   store: MongoStore.create({mongoUrl: 'mongodb://127.0.0.1:27017/allcontinents'})
+// }))
 
 app.use(function(req, res, next){
   req.session.counter = req.session.counter +1 || 1,
@@ -71,4 +97,4 @@ app.set('view engine', 'ejs');
 
 module.exports = app;
 
-mongoose.connect('mongodb://127.0.0.1:27017/allcontinents')
+// mongoose.connect('mongodb://127.0.0.1:27017/allcontinents')

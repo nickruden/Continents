@@ -1,12 +1,13 @@
 var express = require('express');
 var router = express.Router();
-var Continent = require("../models/continent").Continent
-var User = require("./../models/user").User
-var checkAuth = require("./../middleware/checkAuth.js")
+var db = require('../mySQLConnect')
+// var Continent = require("../models/continent").Continent
+// var User = require("./../models/user").User
+// var checkAuth = require("./../middleware/checkAuth.js")
 
 /* Главная */
 router.get('/', function(req, res, next) {
-  Continent.find({}, {_id:0, title:1, nick:1}, function(err, menu){
+  db.query(`SELECT title, nick FROM continents`, (err, menu) => {
     req.session.greeting = "Hi!!!",
     res.cookie('gretting', 'Hi!!!').render('index', { 
       title: 'Express',
