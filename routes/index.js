@@ -1,9 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var db = require('../mySQLConnect')
-// var Continent = require("../models/continent").Continent
-// var User = require("./../models/user").User
-// var checkAuth = require("./../middleware/checkAuth.js")
+var checkAuth = require("./../middleware/checkAuth.js")
 
 /* Главная */
 router.get('/', function(req, res, next) {
@@ -27,28 +25,28 @@ router.get('/logreg', function(req, res, next){
   });
 })
 
-router.post('/logreg', function(req, res, next){
-  var username = req.body.username;
-  var password = req.body.password;
 
-  User.findOne({username:username},function(err,user){
+router.post('/logreg', function(req, res, next){
+  var Username = req.body.username;
+  var Password = req.body.password;
+
+  db.query(`SELECT * FROM user WHERE user.username = '${Username}'`, (err, users) => {
     if(err) return next(err)
-    if(user){
-	    if(user.checkPassword(password)){
-        req.session.user = user._id
+    if(users.length > 0){
+      var user = users[0];
+      if(Password == user.password){
+        req.session.user = user.user_id
         res.redirect('/')
-      } 
-      else { res.render('logreg', {
-        title: 'Вход', 
+      } else { res.render('logreg', {
+        title: 'Вход',
         error: 'Пароль не верный'
         })
       }
     } else {
-	    var user = new User({username:username,password:password})
-      user.save(function(err,user){
-        if(err) return next(err)
-          req.session.user = user._id
-          res.redirect('/')
+      db.query(`INSERT INTO user (username, password) VALUES ('${Username}', '${Password}')`, (err,user) =>{
+        if (err) return next(err)
+        req.session.user = user.user_id
+        res.redirect('/')
       })
     }
   })

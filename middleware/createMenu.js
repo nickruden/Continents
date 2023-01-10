@@ -1,4 +1,3 @@
-// var Continent = require("./../models/continent").Continent
 var db = require('../mySQLConnect')
 
 module.exports = function(req, res, next){

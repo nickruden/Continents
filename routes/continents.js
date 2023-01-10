@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
 var db = require('../mySQLConnect');
+var checkAuth = require("./../middleware/checkAuth.js")
 // var Continent = require("../models/continent").Continent;
-var async = require("async");
-// var checkAuth = require("./../middleware/checkAuth.js")
+// var async = require("async");
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
 });
 
 /* Страница континентов на MySQL */
-router.get('/:nick' ,function(req, res, next) {
+router.get('/:nick', checkAuth, function(req, res, next) {
   db.query(`SELECT * FROM continents WHERE continents.nick = '${req.params.nick}'`, (err, continents) => {
     if(err) {
       console.log(err);

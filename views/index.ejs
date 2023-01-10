@@ -1,10 +1,10 @@
 <% layout('./layout/page.ejs') %>
 <div class="main_page">
     <div class="log_massage">
-        <% if(user) {%>
+        <% if(user.length > 0) {%>
             <!-- Случай залогиненного пользователя -->
             <div class="log">
-                <h3 class="log">Привет <%= user.username %>!</h3>
+                <h3 class="log">Привет <%= users[0].username %>!</h3>
             </div>
            <% }else{ %>
             <!-- Случай не залогиненного пользователя -->
