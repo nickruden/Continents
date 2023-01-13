@@ -27,14 +27,14 @@ router.get('/logreg', function(req, res, next){
 
 
 router.post('/logreg', function(req, res, next){
-  var Username = req.body.username;
-  var Password = req.body.password;
+  var username = req.body.username;
+  var password = req.body.password;
 
-  db.query(`SELECT * FROM user WHERE user.username = '${Username}'`, (err, users) => {
+  db.query(`SELECT * FROM user WHERE user.username = '${username}'`, (err, users) => {
     if(err) return next(err)
-    if(users.length > 0){
+    if(users.length > 0){ //length - возвращает число элементов в массиве, или длину строки
       var user = users[0];
-      if(Password == user.password){
+      if(password == user.password){
         req.session.user = user.user_id
         res.redirect('/')
       } else { res.render('logreg', {
@@ -43,7 +43,7 @@ router.post('/logreg', function(req, res, next){
         })
       }
     } else {
-      db.query(`INSERT INTO user (username, password) VALUES ('${Username}', '${Password}')`, (err,user) =>{
+      db.query(`INSERT INTO user (username, password) VALUES ('${username}', '${password}')`, (err,user) =>{
         if (err) return next(err)
         req.session.user = user.user_id
         res.redirect('/')

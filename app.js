@@ -26,6 +26,7 @@ var options = {
   var sessionStore = new MySQLStore(options, connection);
   
 // view engine setup
+app.engine('ejs',require('ejs-locals'));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
@@ -91,9 +92,9 @@ app.use(function(err, req, res, next) {
   });
 });
 
-app.engine('ejs',require('ejs-locals'));
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+// app.engine('ejs',require('ejs-locals'));
+// app.set('views', path.join(__dirname, 'views'));
+// app.set('view engine', 'ejs');
 
 module.exports = app;
 
