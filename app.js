@@ -16,11 +16,11 @@ var continents = require('./routes/continents');
 var app = express();
 
 var options = {
-  host : 'localhost',
+  host : 'bocg2cmeficw000b5qyo-mysql.services.clever-cloud.com',
   port: '3306',
-  user : 'root',
-  password : 'root',
-  database: 'mydb'
+  user : 'uqod9urhjmwdwj89',
+  password : 'RuS3sRialInl5ndmIvRE',
+  database: 'bocg2cmeficw000b5qyo'
 };
   var connection = mysql2.createPool(options)
   var sessionStore = new MySQLStore(options, connection);
